@@ -1,4 +1,4 @@
 # Yeah, I read
 
 
-with cock
+without profanity
