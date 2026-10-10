@@ -2,6 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://cf2xenb7emrix" path="res://entities/player/player.tscn" id="1_2mgkc"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_712nc"]
+
+[sub_resource type="Sky" id="Sky_tsgde"]
+sky_material = SubResource("ProceduralSkyMaterial_712nc")
+
+[sub_resource type="Environment" id="Environment_2mgkc"]
+background_mode = 2
+sky = SubResource("Sky_tsgde")
+ambient_light_source = 3
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_dhrd0"]
 size = Vector3(50.50995, 0.6016846, 50.5177)
 
@@ -18,15 +32,18 @@ size = Vector2(50, 50)
 
 [node name="World" type="Node3D" unique_id=1894059485]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1691460957]
+environment = SubResource("Environment_2mgkc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=585264176]
+transform = Transform3D(-0.95128757, 0.308305, 9.188206e-09, -0.26106378, -0.80552304, 0.5319572, 0.16400503, 0.50604427, 0.8467713, 19.642715, 18.475994, 0)
+shadow_enabled = true
+
 [node name="Player" parent="." unique_id=433571944 instance=ExtResource("1_2mgkc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54883, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=446708573]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1170387, 11.543849)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2069126980]
-transform = Transform3D(1, 0, 0, 0, 0.7638486, 0.6453955, 0, -0.6453955, 0.7638486, 0, 13.955779, 0)
-shadow_enabled = true
 
 [node name="Objects" type="Node3D" parent="." unique_id=1970302338]
 
