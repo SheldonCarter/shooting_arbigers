@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b6uognxlbpejd"]
+
+[ext_resource type="PackedScene" uid="uid://cf2xenb7emrix" path="res://Entities/player/player.tscn" id="1_2mgkc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dhrd0"]
+size = Vector3(50.50995, 0.6016846, 50.5177)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dhrd0"]
+size = Vector2(50, 50)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dhrd0"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dhrd0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dhrd0"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_dhrd0"]
+
+[node name="World" type="Node3D" unique_id=1894059485]
+
+[node name="Player" parent="." unique_id=433571944 instance=ExtResource("1_2mgkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54883, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=446708573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1170387, 11.543849)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2069126980]
+transform = Transform3D(1, 0, 0, 0, 0.7638486, 0.6453955, 0, -0.6453955, 0.7638486, 0, 13.955779, 0)
+shadow_enabled = true
+
+[node name="Objects" type="Node3D" parent="." unique_id=1970302338]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects" unique_id=289310634]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/StaticBody3D" unique_id=1114583881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20187378, -0.19915771, 0.38580322)
+shape = SubResource("BoxShape3D_dhrd0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/StaticBody3D" unique_id=1185283265]
+mesh = SubResource("PlaneMesh_dhrd0")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Objects" unique_id=888985700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91633105, 7.3382344)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/StaticBody3D2" unique_id=1614381744]
+mesh = SubResource("CylinderMesh_dhrd0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/StaticBody3D2" unique_id=1301437673]
+shape = SubResource("CylinderShape3D_dhrd0")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Objects" unique_id=1922615446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, 5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/RigidBody3D" unique_id=82142375]
+shape = SubResource("SphereShape3D_dhrd0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/RigidBody3D" unique_id=857841209]
+mesh = SubResource("SphereMesh_dhrd0")
