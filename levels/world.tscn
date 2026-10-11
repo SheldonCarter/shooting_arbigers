@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b6uognxlbpejd"]
 
 [ext_resource type="PackedScene" uid="uid://cf2xenb7emrix" path="res://entities/player/player.tscn" id="1_2mgkc"]
+[ext_resource type="ArrayMesh" uid="uid://ci7y6j7ht0bky" path="res://resources/shooting_range/stop_sign/stop_sign.gltf" id="2_tsgde"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_712nc"]
 
@@ -54,7 +55,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20187378, -0.19915771, 0.3
 shape = SubResource("BoxShape3D_dhrd0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/StaticBody3D" unique_id=1185283265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019578695, -0.0022861958, -0.026757836)
 mesh = SubResource("PlaneMesh_dhrd0")
+
+[node name="StopSign" type="MeshInstance3D" parent="Objects/StaticBody3D" unique_id=87901516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8795133, -0.0024377853, -17.681414)
+mesh = ExtResource("2_tsgde")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Objects/StaticBody3D" unique_id=774447003]
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Objects" unique_id=888985700]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91633105, 7.3382344)
