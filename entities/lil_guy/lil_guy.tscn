@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://fmt80pl6mbym"]
+
+[ext_resource type="Script" uid="uid://b20fw2x3cx8ro" path="res://entities/lil_guy/lil_guy.gd" id="1_3jliy"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dhrd0"]
+radius = 0.1
+height = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2uyj2"]
+radius = 0.1
+height = 1.0
+
+[node name="LilGuy" type="CharacterBody3D" unique_id=538574475]
+script = ExtResource("1_3jliy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1455269477]
+mesh = SubResource("CapsuleMesh_dhrd0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=160081854]
+shape = SubResource("CapsuleShape3D_2uyj2")
