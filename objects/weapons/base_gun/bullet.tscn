@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dc1hapnvictfq"]
+
+[ext_resource type="Script" uid="uid://dpe7tlksvmdo3" path="res://objects/weapons/base_gun/bullet.gd" id="1_7gmij"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_dhrd0"]
+radius = 0.05
+height = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2uyj2"]
+radius = 0.05
+
+[node name="Bullet" type="StaticBody3D" unique_id=920483968]
+script = ExtResource("1_7gmij")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1314552695]
+mesh = SubResource("SphereMesh_dhrd0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=410560330]
+shape = SubResource("SphereShape3D_2uyj2")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponStats" format=3 uid="uid://bwd0nxmpk2ls"]
+
+[ext_resource type="PackedScene" uid="uid://dc1hapnvictfq" path="res://objects/weapons/base_gun/bullet.tscn" id="1_7pp4t"]
+[ext_resource type="Script" uid="uid://cdwfiw2gjs2m7" path="res://objects/weapons/weapon_stats.gd" id="1_kw0bi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7pp4t"]
+size = Vector3(0.1, 0.05, 0.1)
+
+[resource]
+script = ExtResource("1_kw0bi")
+model = SubResource("BoxMesh_7pp4t")
+projectile = ExtResource("1_7pp4t")
+metadata/_custom_type_script = "uid://cdwfiw2gjs2m7"

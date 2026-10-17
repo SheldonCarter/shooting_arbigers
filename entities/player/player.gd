@@ -8,6 +8,7 @@ class_name Player
 @export var jump_speed : float = 15.0
 
 @onready var camera: Camera3D = $Camera3D
+@onready var weapon_manager: WeaponManager = $WeaponManager
 
 var direction : Vector3 = Vector3.ZERO
 
@@ -27,6 +28,8 @@ func _input(event):
 		rotation.y -= event.relative.x * mouse_sensitivity
 		camera.rotation.x -= event.relative.y * mouse_sensitivity
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
+	if event.is_action_pressed("primary_action"):
+		weapon_manager.primary_attack()
 
 func movement(delta: float):
 	var direction := Input.get_vector("move_left", "move_right", "move_forward", "move_back")

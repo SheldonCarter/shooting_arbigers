@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cf2xenb7emrix"]
 
 [ext_resource type="Script" uid="uid://bse0p0re8slby" path="res://entities/player/player.gd" id="1_qjpfe"]
+[ext_resource type="Script" uid="uid://yvlstcamad5t" path="res://objects/weapons/weapon_manager.gd" id="2_abrql"]
+[ext_resource type="PackedScene" uid="uid://1x35xosp2f22" path="res://objects/weapons/weapon.tscn" id="3_sglur"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dhrd0"]
 
@@ -16,5 +18,12 @@ mesh = SubResource("CapsuleMesh_dhrd0")
 shape = SubResource("CapsuleShape3D_dhrd0")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1273039663]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.669783, -0.29735106)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.669783, -0.29735112)
 current = true
+
+[node name="WeaponManager" type="Node3D" parent="." unique_id=1379017774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35520315, 0, -0.51432425)
+script = ExtResource("2_abrql")
+
+[node name="Weapon" parent="WeaponManager" unique_id=654953061 instance=ExtResource("3_sglur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07943159, 0.5138509, -0.11017561)
