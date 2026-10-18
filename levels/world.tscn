@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cf2xenb7emrix" path="res://entities/player/player.tscn" id="1_2mgkc"]
 [ext_resource type="ArrayMesh" uid="uid://ci7y6j7ht0bky" path="res://resources/shooting_range/stop_sign/stop_sign.gltf" id="2_tsgde"]
+[ext_resource type="Script" uid="uid://b5xb8wwyx0fpg" path="res://levels/bird_node_3d.gd" id="3_pmfem"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_712nc"]
 
@@ -30,6 +31,8 @@ size = Vector2(50, 50)
 [sub_resource type="SphereShape3D" id="SphereShape3D_dhrd0"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_dhrd0"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_uwgac"]
 
 [node name="World" type="Node3D" unique_id=1894059485]
 
@@ -81,3 +84,11 @@ shape = SubResource("SphereShape3D_dhrd0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/RigidBody3D" unique_id=857841209]
 mesh = SubResource("SphereMesh_dhrd0")
+
+[node name="BirdNode3D" type="Node3D" parent="Objects" unique_id=341126935]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.202277, 14.164733, 0)
+script = ExtResource("3_pmfem")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/BirdNode3D" unique_id=97531050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0210495, 35.3703, -7.1929693)
+mesh = SubResource("SphereMesh_uwgac")
