@@ -83,5 +83,5 @@ shape = SubResource("SphereShape3D_dhrd0")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/RigidBody3D" unique_id=857841209]
 mesh = SubResource("SphereMesh_dhrd0")
 
-[node name="BirdNode3D" parent="Objects" unique_id=1930064213 instance=ExtResource("3_pmfem")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.897196, 0)
+[node name="BirdNode3D" parent="." unique_id=1620439938 instance=ExtResource("3_pmfem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33.181355, -13.788862)

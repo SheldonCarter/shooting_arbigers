@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k57db"]
 render_priority = 0
 shader = ExtResource("2_i5s2c")
-shader_parameter/diameter = 0.0
+shader_parameter/alpha = 0.0
 
 [node name="BirdNode3D" type="Node3D" unique_id=1930064213]
 script = ExtResource("1_n3trl")
@@ -44,7 +44,7 @@ script = SubResource("GDScript_uwgac")
 mesh = SubResource("SphereMesh_uwgac")
 
 [node name="Radius" type="MeshInstance3D" parent="." unique_id=252131138]
-transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, -0.007853031, 0.0076515675, -0.0013283491)
+transform = Transform3D(0.9998481, 1.5235535e-09, 0.01742742, 0, -1, 8.742278e-08, 0.01742742, -8.74095e-08, -0.9998481, -0.007853031, 0.0076515675, -0.0013283491)
 cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("PlaneMesh_l1qav")
