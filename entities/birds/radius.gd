@@ -1,6 +1,6 @@
 extends MeshInstance3D
 
-@export var scale_factor =  50.0
+@export var scale_factor =  10.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,6 +10,8 @@ func _ready() -> void:
 	get_active_material(0).set_shader_parameter("alpha", show_movement_info);
 	
 	scale = Vector3(scale_factor, 1.0, scale_factor)
+	
+	
 	
 #
 	#get_active_material(0).set_shader_parameter("scale_factor", scale_factor);

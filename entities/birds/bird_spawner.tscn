@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://bou11iiak8wm4" path="res://entities/birds/radius.gdshader" id="2_i5s2c"]
 [ext_resource type="Script" uid="uid://1or0fxp8kkk2" path="res://entities/birds/radius.gd" id="3_i5s2c"]
+[ext_resource type="Script" uid="uid://bxcgrudoqjhl5" path="res://entities/birds/bird.gd" id="4_kdqxi"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_l1qav"]
 
@@ -10,45 +11,9 @@ render_priority = 0
 shader = ExtResource("2_i5s2c")
 shader_parameter/alpha = 0.0
 
-[sub_resource type="GDScript" id="GDScript_uwgac"]
-script/source = "extends Node3D
+[sub_resource type="SphereMesh" id="SphereMesh_pmfem"]
 
-
-
-func decide_direction():
-	
-	pass
-	
-	
-
-	
-	
-	
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	
-	await get_tree().create_timer(2).timeout
-	
-	
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	
-	
-	position.x += .02;
-	
-	if
-	#rotation_degrees.y += 1;
-	#rotate_y(.02)
-	
-	#pass
-	
-"
-
-[sub_resource type="SphereMesh" id="SphereMesh_uwgac"]
-
-[node name="BirdSpawner" type="Node3D" unique_id=1930064213]
+[node name="BirdSpawner" type="Area3D" unique_id=644606590]
 
 [node name="Radius" type="MeshInstance3D" parent="." unique_id=252131138]
 transform = Transform3D(0.9998481, 1.5235535e-09, 0.01742742, 0, -1, 8.742278e-08, 0.01742742, -8.74095e-08, -0.9998481, -0.007853031, 0.0076515675, -0.0013283491)
@@ -58,8 +23,8 @@ mesh = SubResource("PlaneMesh_l1qav")
 surface_material_override/0 = SubResource("ShaderMaterial_k57db")
 script = ExtResource("3_i5s2c")
 
-[node name="Bird" type="Node3D" parent="." unique_id=2017749526]
-script = SubResource("GDScript_uwgac")
+[node name="Bird" type="Node3D" parent="." unique_id=215168273]
+script = ExtResource("4_kdqxi")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Bird" unique_id=548565098]
-mesh = SubResource("SphereMesh_uwgac")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bird" unique_id=579163580]
+mesh = SubResource("SphereMesh_pmfem")
